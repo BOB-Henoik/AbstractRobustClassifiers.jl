@@ -1,8 +1,19 @@
 module AbstractRobustClassifiers
 
 export 
-    DominanceMatrix, DominancePair, IncomparablePair, Prediction
+    DominanceMatrix, 
+    DominancePair, 
+    IncomparablePair, 
+    Prediction,
+    IntervalDominance,
+    Maximality,
+    EAdmissibility,
+    GammaMaxiMax,
+    GammaMaxiMin,
+    Hurwicz,
+    DecisionRuleTypes
 
-include("Types.jl")
+include("DecisionTypes.jl")
+include("DecisionRuleTypes.jl")
 
 end
