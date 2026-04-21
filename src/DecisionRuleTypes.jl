@@ -1,3 +1,5 @@
+using MLJModelInterface
+
 abstract type AbstractDecisionRule end
 
 struct IntervalDominance <: AbstractDecisionRule end
@@ -14,3 +16,11 @@ struct Hurwicz <: AbstractDecisionRule
 end
 
 const DecisionRuleTypes = Union{IntervalDominance, Maximality, EAdmissibility, GammaMaxiMax, GammaMaxiMin, Hurwicz}
+
+function predict end
+
+predict(::Model, ::DecisionRuleTypes, x) = (nothing)
+
+function compute_dominance_matrix end
+
+compute_dominance_matrix(::Model, ::DecisionRuleTypes, x) = (nothing)
