@@ -19,8 +19,8 @@ const DecisionRuleTypes = Union{IntervalDominance, Maximality, EAdmissibility, G
 
 function predict end
 
-predict(::Model, ::DecisionRuleTypes, x) = (nothing)
+predict(::DecisionRuleTypes, fitresult, x) = (nothing)
 
 function compute_dominance_matrix end
 
-compute_dominance_matrix(::Model, ::DecisionRuleTypes, x) = (nothing)
+compute_dominance_matrix(::DecisionRuleTypes, fitresult, x) = (nothing)
