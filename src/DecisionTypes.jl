@@ -1,3 +1,5 @@
+abstract type AbstractDecision end
+
 """ 
     The dominance matrix will contain the results from the decision function over the credal set
     (e.g. maximality, E-admissibility etc.)
@@ -11,7 +13,7 @@ const DominanceMatrix = Matrix{Bool}
     is dominating (in the sence of the used decision function) the class represented by the 'dominate' index
 """
 
-struct DominancePair
+struct DominancePair <:AbstractDecision
 	dominant::Int64
 	dominate::Int64
 	DominancePair(y1::Int64, y2::Int64) = new(y1, y2)
@@ -21,7 +23,7 @@ end
     IncomparablePair contains two classes which are incomparable w.r.t the used decision function.
     The index representing class1 is smaller than the index of class2 (when built from Prediction struct)
 """
-struct IncomparablePair
+struct IncomparablePair <:AbstractDecision
 	class1::Int64
 	class2::Int64
 	IncomparablePair(y1::Int64, y2::Int64) = new(y1, y2)
